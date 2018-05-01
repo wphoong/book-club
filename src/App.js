@@ -6,6 +6,7 @@ import './App.css';
 import { login, logout } from "./actions/auth.js";
 import { firebase } from "./firebase/firebase.js";
 import AppRouter, { history } from "./routes/AppRouter.js";
+import { addBook, removeBook } from "./actions/books.js";
 
 const store = configureStore();
 
@@ -18,6 +19,17 @@ class App extends Component {
     );
   }
 }
+
+
+const state = store.getState();
+console.log(state);
+
+store.subscribe(() => {
+  const state = store.getState();
+  console.log(state);
+});
+
+
 
 // firebase.auth().onAuthStateChanged((user) => {
 //   if (!user) {
