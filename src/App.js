@@ -11,7 +11,6 @@ import { startAddUser, addUser } from "./actions/user.js";
 
 const store = configureStore();
 
-
 class App extends Component {
   render() {
     return (
@@ -50,27 +49,6 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push("/");
   }
 });
-
-// store.dispatch(addUser({uid: '123'}));
-// startAddUser({fullName: 'asdf'});
-
-// const userinfo = {
-//   uid: '123'
-// };
-
-// database.ref(`users`).push(userinfo).then((ref) => {
-//   store.dispatch(addUser({
-//     id: ref.key,
-//     ...userinfo
-//   }));
-// });
-
-// try {
-//   startAddUser({uid: "asd", fullName: 'hi', city: 'hehe', state: 'asdf'});
-// }
-// catch(err) {
-//   console.log(err);
-// }
 
 
 export default App;

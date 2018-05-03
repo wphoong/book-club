@@ -18,19 +18,20 @@ class AddBookComponent extends React.Component {
 		e.preventDefault();
 		
 		this.props.startAddBook({name: this.state.name});
-		// this.props.history.push("/");
+		this.setState(() => ({name: ""}));
 	};
 	render() {
 		return (
-			<div>
-				<h1>this is my add book component</h1>
+			<div className="text-center">
+				<h1>Add a Book</h1>
 				<form onSubmit={this.handleSubmit} >
 					<input type="text" 
 						autoFocus
+						placeholder="Enter Book Name"
 						value={this.state.name}
 						onChange={this.handleNameChange}
 					/>
-					<button type="submit">Add Book</button>
+					<button className="btn btn-primary" type="submit">Add Book</button>
 				</form>
 			</div>
 		);

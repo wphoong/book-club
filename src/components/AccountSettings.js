@@ -40,6 +40,7 @@ class AccountSettings extends React.Component {
 			<div>
 				<h1>Update Profile</h1>
 				<form onSubmit={this.handleSubmit}>
+					<div className="form-group">
 					<input 
 						type="text" 
 						placeholder="Full Name"
@@ -59,6 +60,7 @@ class AccountSettings extends React.Component {
 						onChange={this.handleState}
 						/>
 					<button type="submit">Save</button>
+					</div>
 				</form>
 			</div>
 		);

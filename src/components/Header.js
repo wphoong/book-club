@@ -6,19 +6,24 @@ import { startLogOut, logout } from "../actions/auth.js";
 const Header = (props) => {
 	return (
 		<div>
-			<nav>
+			<nav className="navbar navbar-light bg-light">
 				<Link to="/">
-					<h1>Home</h1>
+					<h1 className="navbar-brand mb-0 h1">Home</h1>
 				</Link>
 				{
 					props.isAuthenticated ? 
-						(<div>
-							<Link to="/accountsettings">Account Settings</Link>
-							<button onClick={props.startLogOut}>
-								Log Out
-							</button>
-						</div>) :
-						<Link to="/login">Login</Link>
+						(<div className="">
+								<Link to="/dashboard" className="btn">Dashboard</Link>
+								<Link to="/accountsettings" className="btn">Account Settings</Link>
+								<button 
+									className="btn"
+									onClick={props.startLogOut}>
+									Log Out
+								</button>
+							</div>) : (
+						<div>
+							<Link to="/login" className="btn">Login</Link>
+						</div>)					
 				}
 			</nav>
 		</div>

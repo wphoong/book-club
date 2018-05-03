@@ -7,6 +7,14 @@ const booksReducer = (state = booksReducerDefaultState, action) => {
 				...state,
 				action.book
 			];
+		case "EDIT_BOOK":
+			return state.find(({id}) => {
+				if (id == action.id) {
+					return [...state, ...action.updates];
+				} else {
+					return state;
+				}
+			});
 		case "REMOVE_BOOK":
 			return state.filter(({id}) => id !== action.id);
 		case "SET_BOOKS":

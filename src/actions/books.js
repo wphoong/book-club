@@ -9,8 +9,8 @@ export const addBook = (book) => ({
 export const startAddBook = (bookData = {}) => {
 	return (dispatch, getState) => {
 		const uid = getState().auth.uid;
-		const { name = "" } = bookData;
-		const book = { name, uid };
+		const { name = "", tradeStatus = false, requestId = "" } = bookData;
+		const book = { name, uid, tradeStatus, requestId };
 
 		return database.ref('books').push(book).then((ref) => {
 			dispatch(addBook({
@@ -30,6 +30,20 @@ export const startRemoveBook = ({id} = {}) => {
 	return (dispatch) => {
 		return database.ref(`books/${id}`).remove().then(() => {
 			dispatch(removeBook({id}));
+		});
+	};
+};
+
+export const editBook = (id, updates) => ({
+	type: "EDIT_BOOK",
+	id,
+	updates
+});
+
+export const startEditBook = (id, updates) => {
+	return (dispatch) => {
+		return database.ref(`books/${id}`).update(updates).then(() => {
+			dispatch(editBook(id, updates));
 		});
 	};
 };

@@ -7,6 +7,9 @@ const publicPath = path.join(__dirname, "..", "build");
 require("dotenv").config({ path: ".env.development"});
 
 app.use(express.static(publicPath));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // redirect JS jQuery
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));

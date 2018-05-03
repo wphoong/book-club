@@ -20,10 +20,19 @@ class HomePage extends React.Component {
 	};
 	render() {
 		return (
-			<div>
-				<h1>THIS IS MY HOMEPAGE COMPONENT</h1>
-				<button onClick={this.handleShowBooks}>Show Books</button>
-				<BooksList books={this.state.books} />
+			<div className="container-fluid">
+			<div className="jumbotron text-center">
+				<h1>Book Club</h1>
+				<button 
+					className="btn btn-success"
+					onClick={this.handleShowBooks}>
+					Show Books
+				</button>
+				<br />
+				<div className="container">
+					<BooksList books={this.state.books} />
+				</div>
+			</div>
 			</div>
 		);
 	}
