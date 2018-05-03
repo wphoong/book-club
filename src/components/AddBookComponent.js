@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addBook, removeBook } from "../actions/books.js";
+import { startAddBook } from "../actions/books.js";
 
 class AddBookComponent extends React.Component {
 	constructor(props) {
@@ -17,7 +17,7 @@ class AddBookComponent extends React.Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		
-		this.props.addBook({name: this.state.name});
+		this.props.startAddBook({name: this.state.name});
 		// this.props.history.push("/");
 	};
 	render() {
@@ -38,7 +38,7 @@ class AddBookComponent extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	addBook: (book) => dispatch(addBook(book))
+	startAddBook: (book) => dispatch(startAddBook(book))
 });
 
 
