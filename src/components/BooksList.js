@@ -48,7 +48,7 @@ class BooksList extends React.Component {
 											{book.name}
 										</p>
 										{
-											this.props.auth.uid != book.uid && book.tradeStatus != true ?
+											JSON.stringify(this.props.auth) != "{}" && this.props.auth.uid != book.uid && book.tradeStatus != true ?
 												<button
 													className="btn btn-primary" 
 													value={book.id} 
@@ -57,7 +57,7 @@ class BooksList extends React.Component {
 												</button> : ""
 										}
 										{
-											book.requestId == this.props.auth.uid && book.tradeStatus == true ?
+											JSON.stringify(this.props.auth) != "{}" && book.requestId == this.props.auth.uid && book.tradeStatus == true ?
 												<button 
 													className="btn btn-danger" 
 													value={book.id}
@@ -66,7 +66,7 @@ class BooksList extends React.Component {
 												</button> : ""
 										}
 										{
-											book.uid == this.props.auth.uid && book.tradeStatus == true ?
+											JSON.stringify(this.props.auth) != "{}" && book.uid == this.props.auth.uid && book.tradeStatus == true ?
 												<button
 													className="btn btn-info"  
 													data-book={book.requestId}

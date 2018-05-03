@@ -1,5 +1,4 @@
 import React from 'react';
-import { firebase } from "../firebase/firebase.js";
 import { connect } from "react-redux";
 import { startEditUser } from "../actions/user.js";
 

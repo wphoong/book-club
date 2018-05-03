@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
-import { startLogOut, logout } from "../actions/auth.js";
+import { startLogOut } from "../actions/auth.js";
 
 const Header = (props) => {
 	return (

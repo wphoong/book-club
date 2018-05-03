@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch, Link } from 'react-router-dom'
+import { Router, Switch } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory';
 import HomePage from '../components/HomePage.js';
 import DashboardPage from '../components/DashboardPage.js';

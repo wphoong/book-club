@@ -21,13 +21,6 @@ class App extends Component {
   }
 }
 
-const state = store.getState();
-
-store.subscribe(() => {
-  const state = store.getState();
-  console.log(state);
-});
-
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     store.dispatch(login(user.uid));
